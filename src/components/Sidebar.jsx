@@ -17,6 +17,7 @@ import ModeNightIcon from '@mui/icons-material/ModeNight';
 const Wrapper = styled(Box)(({ theme }) => ({
   // backgroundColor: 'red',
   padding: '10px',
+  // background: theme.palette.secondary.main,
   flex: 1,
   display: 'none',
   [theme.breakpoints.up('md')]: {
