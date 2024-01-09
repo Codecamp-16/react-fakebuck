@@ -13,7 +13,11 @@ const Wrapper = styled(Box)(({ theme }) => ({
 }));
 
 function Rightbar() {
-  return <Wrapper>Rightbar</Wrapper>;
+  return (
+    <Wrapper>
+      <Box sx={{ position: 'fixed' }}>Rightbar</Box>
+    </Wrapper>
+  );
 }
 
 export default Rightbar;

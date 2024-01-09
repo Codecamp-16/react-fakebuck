@@ -47,50 +47,48 @@ function Navbar() {
     setAnchorEl(null);
   };
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position='static'>
-        <AppBarContent>
-          <Typography fontWeight={700} component='h1' variant='h5'>
-            Fake Buck
-          </Typography>
-          <Stack direction='row' gap={1}>
-            <CustomIcon>
-              <Badge badgeContent={4} color='error'>
-                <MailIcon />
-              </Badge>
-            </CustomIcon>
-            <CustomIcon>
-              <Badge badgeContent={2} color='error'>
-                <NotificationsIcon />
-              </Badge>
-            </CustomIcon>
-            <IconButton onClick={openMenuList}>
-              <Avatar
-                alt='John Doe'
-                src='https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-              />
-            </IconButton>
-          </Stack>
-          <Menu
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={closeMenuList}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'left',
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'left',
-            }}
-          >
-            <MenuItem>Profile</MenuItem>
-            <MenuItem>My account</MenuItem>
-            <MenuItem>Logout</MenuItem>
-          </Menu>
-        </AppBarContent>
-      </AppBar>
-    </Box>
+    <AppBar position='sticky'>
+      <AppBarContent>
+        <Typography fontWeight={700} component='h1' variant='h5'>
+          Fake Buck
+        </Typography>
+        <Stack direction='row' gap={1}>
+          <CustomIcon>
+            <Badge badgeContent={4} color='error'>
+              <MailIcon />
+            </Badge>
+          </CustomIcon>
+          <CustomIcon>
+            <Badge badgeContent={2} color='error'>
+              <NotificationsIcon />
+            </Badge>
+          </CustomIcon>
+          <IconButton onClick={openMenuList}>
+            <Avatar
+              alt='John Doe'
+              src='https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+            />
+          </IconButton>
+        </Stack>
+        <Menu
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={closeMenuList}
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'left',
+          }}
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'left',
+          }}
+        >
+          <MenuItem>Profile</MenuItem>
+          <MenuItem>My account</MenuItem>
+          <MenuItem>Logout</MenuItem>
+        </Menu>
+      </AppBarContent>
+    </AppBar>
   );
 }
 

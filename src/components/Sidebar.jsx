@@ -16,6 +16,7 @@ import ModeNightIcon from '@mui/icons-material/ModeNight';
 
 const Wrapper = styled(Box)(({ theme }) => ({
   // backgroundColor: 'red',
+
   padding: '10px',
   // background: theme.palette.secondary.main,
   flex: 1,
@@ -28,48 +29,50 @@ const Wrapper = styled(Box)(({ theme }) => ({
 function Sidebar() {
   return (
     <Wrapper>
-      <nav>
-        <List>
-          {/* Home */}
-          <ListItem>
-            <ListItemButton>
-              <ListItemIcon>
-                <HomeIcon />
-              </ListItemIcon>
-              <ListItemText primary='Home Page' />
-            </ListItemButton>
-          </ListItem>
-          {/* Shop */}
-          <ListItem>
-            <ListItemButton>
-              <ListItemIcon>
-                <StorefrontIcon />
-              </ListItemIcon>
-              <ListItemText primary='Shop' />
-            </ListItemButton>
-          </ListItem>
+      <Box sx={{ position: 'fixed' }}>
+        <nav>
+          <List>
+            {/* Home */}
+            <ListItem>
+              <ListItemButton>
+                <ListItemIcon>
+                  <HomeIcon />
+                </ListItemIcon>
+                <ListItemText primary='Home Page' />
+              </ListItemButton>
+            </ListItem>
+            {/* Shop */}
+            <ListItem>
+              <ListItemButton>
+                <ListItemIcon>
+                  <StorefrontIcon />
+                </ListItemIcon>
+                <ListItemText primary='Shop' />
+              </ListItemButton>
+            </ListItem>
 
-          {/* Friend */}
-          <ListItem>
-            <ListItemButton>
-              <ListItemIcon>
-                <PeopleIcon />
-              </ListItemIcon>
-              <ListItemText primary='Friend' />
-            </ListItemButton>
-          </ListItem>
+            {/* Friend */}
+            <ListItem>
+              <ListItemButton>
+                <ListItemIcon>
+                  <PeopleIcon />
+                </ListItemIcon>
+                <ListItemText primary='Friend' />
+              </ListItemButton>
+            </ListItem>
 
-          {/* Mode Switch */}
-          <ListItem>
-            <ListItemButton>
-              <ListItemIcon>
-                <ModeNightIcon />
-              </ListItemIcon>
-              <Switch />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </nav>
+            {/* Mode Switch */}
+            <ListItem>
+              <ListItemButton>
+                <ListItemIcon>
+                  <ModeNightIcon />
+                </ListItemIcon>
+                <Switch />
+              </ListItemButton>
+            </ListItem>
+          </List>
+        </nav>
+      </Box>
     </Wrapper>
   );
 }
