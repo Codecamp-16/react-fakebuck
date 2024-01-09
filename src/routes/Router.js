@@ -1,4 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import LoginPage from '../pages/LoginPage';
+import HomePage from '../pages/HomePage';
+import ProfilePage from '../pages/ProfilePage';
+import FriendPage from '../pages/FriendPage';
 
 // S1
 // createBrowserRouter : วาง Route ต่างๆให้ App รับ input เป็น array ของ Router Object
@@ -6,19 +10,19 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 const router = createBrowserRouter([
   {
     path: '/login',
-    element: <h1>LoginPage</h1>,
+    element: <LoginPage />,
   },
   {
     path: '/',
-    element: <h1>HomePage</h1>,
+    element: <HomePage />,
   },
   {
     path: '/profile',
-    element: <h1>profilePage</h1>,
+    element: <ProfilePage />,
   },
   {
     path: '/friend',
-    element: <h1>FriendPage</h1>,
+    element: <FriendPage />,
   },
   {
     // :dynamic Path Parameter

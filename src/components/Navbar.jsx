@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 // emotion
 import styled from '@emotion/styled';
 // Layout
@@ -36,8 +37,16 @@ const CustomIcon = styled(IconButton)(({ theme }) => {
 });
 
 function Navbar() {
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
 
+  const logout = () => {
+    navigate('/login');
+  };
+
+  const goToProfile = () => {
+    navigate('/profile');
+  };
   const openMenuList = (event) => {
     // set แท็กที่จะเป็นตัว anchor
     setAnchorEl(event.currentTarget);
@@ -83,9 +92,9 @@ function Navbar() {
             horizontal: 'left',
           }}
         >
-          <MenuItem>Profile</MenuItem>
+          <MenuItem onClick={goToProfile}>Profile</MenuItem>
           <MenuItem>My account</MenuItem>
-          <MenuItem>Logout</MenuItem>
+          <MenuItem onClick={logout}>Logout</MenuItem>
         </Menu>
       </AppBarContent>
     </AppBar>
