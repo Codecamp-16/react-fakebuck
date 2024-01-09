@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 // emotion
 import styled from '@emotion/styled';
 import React from 'react';
@@ -33,14 +35,16 @@ function Sidebar() {
         <nav>
           <List>
             {/* Home */}
-            <ListItem>
-              <ListItemButton>
-                <ListItemIcon>
-                  <HomeIcon />
-                </ListItemIcon>
-                <ListItemText primary='Home Page' />
-              </ListItemButton>
-            </ListItem>
+            <Link to='/'>
+              <ListItem>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <HomeIcon />
+                  </ListItemIcon>
+                  <ListItemText primary='Home Page' />
+                </ListItemButton>
+              </ListItem>
+            </Link>
             {/* Shop */}
             <ListItem>
               <ListItemButton>
@@ -52,14 +56,16 @@ function Sidebar() {
             </ListItem>
 
             {/* Friend */}
-            <ListItem>
-              <ListItemButton>
-                <ListItemIcon>
-                  <PeopleIcon />
-                </ListItemIcon>
-                <ListItemText primary='Friend' />
-              </ListItemButton>
-            </ListItem>
+            <Link to='/friend'>
+              <ListItem>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <PeopleIcon />
+                  </ListItemIcon>
+                  <ListItemText primary='Friend' />
+                </ListItemButton>
+              </ListItem>
+            </Link>
 
             {/* Mode Switch */}
             <ListItem>
