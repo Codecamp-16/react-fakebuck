@@ -5,6 +5,9 @@ import ProfilePage from '../pages/ProfilePage';
 import FriendPage from '../pages/FriendPage';
 import FriendProfileWithIdPage from '../pages/FriendProfileWithIdPage';
 import AppLayout from '../layout/AppLayout';
+import { Navigate } from 'react-router-dom';
+import ProtectRoute from './ProtectRoute';
+import RedirectRoute from './RedirectRoute';
 
 // S1
 // createBrowserRouter : วาง Route ต่างๆให้ App รับ input เป็น array ของ Router Object
@@ -41,11 +44,19 @@ import AppLayout from '../layout/AppLayout';
 const router = createBrowserRouter([
   {
     path: '/login',
-    element: <LoginPage />,
+    element: (
+      <RedirectRoute>
+        <LoginPage />
+      </RedirectRoute>
+    ),
   },
   {
     path: '/',
-    element: <AppLayout />,
+    element: (
+      <ProtectRoute>
+        <AppLayout />
+      </ProtectRoute>
+    ),
     children: [
       {
         path: '',
@@ -68,10 +79,25 @@ const router = createBrowserRouter([
   },
   {
     path: '*',
-    element: <h1>Page Not Found</h1>,
+    element: <Navigate to='/login' />,
   },
 ]);
 // S2 : Set up Provider
 export default function Router() {
   return <RouterProvider router={router} />;
 }
+
+/*
+*** Component
+<Link to="/">
+<Navigate to="/">
+<Outlet/>
+
+*** Hook
+useNavigate() => navigate("/")
+useParams() => pathParamObj 
+
+// ** setup
+FN : createBrowserRouter(Array<RouterObj>)
+Component : < RouterProvider route={route}/>
+*/
