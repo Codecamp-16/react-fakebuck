@@ -31,7 +31,7 @@ function Navbar() {
           <Typography component='h1' variant='h5'>
             Fake Buck
           </Typography>
-          <Stack direction='row' gap={1}>
+          <Stack direction='row' gap={1} sx={{ display: { md: 'none' } }}>
             <IconButton>
               <Badge badgeContent={4} color='error'>
                 <MailIcon />
