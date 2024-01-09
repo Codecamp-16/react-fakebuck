@@ -20,10 +20,7 @@ const ModalContent = styled(Box)(({ theme }) => ({
   gap: '20px',
 }));
 
-const PostInput = styled(TextField)(({ theme }) => ({
-  border: 'none',
-  outline: 'none',
-}));
+const PostInput = styled(TextField)``;
 
 function CreatePost() {
   const [open, setOpen] = useState(false);
@@ -45,9 +42,19 @@ function CreatePost() {
             rows={5}
             maxRows={8}
             sx={{
-              '&:focus': {
-                outline: 'none',
-                border: 'none',
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  border: 'none',
+                  outline: 'none',
+                },
+                '&:hover fieldset': {
+                  border: 'none',
+                  outline: 'none',
+                },
+                '&.Mui-focused fieldset': {
+                  border: 'none',
+                  outline: 'none',
+                },
               },
             }}
           />

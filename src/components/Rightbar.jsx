@@ -4,7 +4,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 
 const Wrapper = styled(Box)(({ theme }) => ({
-  backgroundColor: 'wheat',
+  // backgroundColor: 'wheat',
   flex: 1,
   display: 'none',
   [theme.breakpoints.up('md')]: {
