@@ -14,9 +14,10 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShareIcon from '@mui/icons-material/Share';
 import { red } from '@mui/material/colors';
-import React from 'react';
+import React, { useState } from 'react';
 
 function Post() {
+  const [like, setLike] = useState(false);
   return (
     <Card>
       {/* Section-1:Header */}
@@ -52,6 +53,8 @@ function Post() {
       <CardActions disableSpacing>
         <IconButton aria-label='add to favorites'>
           <Checkbox
+            checked={like}
+            onChange={() => setLike(!like)}
             icon={<FavoriteBorderIcon />}
             checkedIcon={<FavoriteIcon sx={{ color: 'red' }} />}
           />
