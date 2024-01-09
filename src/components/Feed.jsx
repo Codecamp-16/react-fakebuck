@@ -3,6 +3,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import Post from './Post';
 import { Stack } from '@mui/material';
+import CreatePost from './CreatePost';
 
 const Wrapper = styled(Box)(({ theme }) => ({
   // background: 'green',
@@ -12,7 +13,8 @@ const Wrapper = styled(Box)(({ theme }) => ({
 function Feed() {
   return (
     <Wrapper>
-      <Stack gap={4}>
+      <Stack gap={4} pt={2}>
+        <CreatePost />
         <Post />
         <Post />
         <Post />
