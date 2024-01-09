@@ -24,8 +24,7 @@ const AppBarContent = styled(Box)`
   align-items: center;
 `;
 
-const CustomIcon = styled(Box)(({ theme }) => {
-  // console.log(theme);
+const CustomIcon = styled(IconButton)(({ theme }) => {
   return {
     display: 'none',
     [theme.breakpoints.up('md')]: {
@@ -43,16 +42,16 @@ function Navbar() {
             Fake Buck
           </Typography>
           <Stack direction='row' gap={1}>
-            <IconButton>
+            <CustomIcon>
               <Badge badgeContent={4} color='error'>
                 <MailIcon />
               </Badge>
-            </IconButton>
-            <IconButton>
+            </CustomIcon>
+            <CustomIcon>
               <Badge badgeContent={2} color='error'>
                 <NotificationsIcon />
               </Badge>
-            </IconButton>
+            </CustomIcon>
             <IconButton>
               <Avatar
                 alt='John Doe'
