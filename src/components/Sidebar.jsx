@@ -56,7 +56,7 @@ function Sidebar() {
             </ListItem>
 
             {/* Friend */}
-            <Link to='/friend'>
+            <Link to='/friend/78'>
               <ListItem>
                 <ListItemButton>
                   <ListItemIcon>

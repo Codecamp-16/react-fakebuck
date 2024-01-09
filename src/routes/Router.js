@@ -3,6 +3,7 @@ import LoginPage from '../pages/LoginPage';
 import HomePage from '../pages/HomePage';
 import ProfilePage from '../pages/ProfilePage';
 import FriendPage from '../pages/FriendPage';
+import FriendProfileWithIdPage from '../pages/FriendProfileWithIdPage';
 import AppLayout from '../layout/AppLayout';
 
 // S1
@@ -61,9 +62,9 @@ const router = createBrowserRouter([
     ],
   },
   {
-    // :dynamic Path Parameter
+    // :dynamic Path Parameter => เป็นชื่อ key ของ obj ที่ return มาจาก useParams()
     path: '/friend/:friendId',
-    element: <h1>FriendPage with ID</h1>,
+    element: <FriendProfileWithIdPage />,
   },
   {
     path: '*',
