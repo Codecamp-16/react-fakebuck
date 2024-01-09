@@ -1,3 +1,5 @@
+// emotion
+import styled from '@emotion/styled';
 // Layout
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
@@ -11,33 +13,42 @@ import Avatar from '@mui/material/Avatar';
 // import { Mail } from '@mui/icons-material';
 
 // Icon
-
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+
+// Custom Component
+const AppBarContent = styled(Box)`
+  display: flex;
+  padding: 8px 24px;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const CustomIcon = styled(Box)(({ theme }) => {
+  // console.log(theme);
+  return {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'block',
+    },
+  };
+});
 
 function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static'>
-        <Box
-          sx={{
-            display: 'flex',
-            px: 4,
-            py: 1,
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}
-        >
+        <AppBarContent>
           <Typography component='h1' variant='h5'>
             Fake Buck
           </Typography>
           <Stack direction='row' gap={1}>
-            <IconButton sx={{ display: { xs: 'none', md: 'block' } }}>
+            <IconButton>
               <Badge badgeContent={4} color='error'>
                 <MailIcon />
               </Badge>
             </IconButton>
-            <IconButton sx={{ display: { xs: 'none', md: 'block' } }}>
+            <IconButton>
               <Badge badgeContent={2} color='error'>
                 <NotificationsIcon />
               </Badge>
@@ -49,7 +60,7 @@ function Navbar() {
               />
             </IconButton>
           </Stack>
-        </Box>
+        </AppBarContent>
       </AppBar>
     </Box>
   );
