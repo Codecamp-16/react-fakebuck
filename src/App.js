@@ -1,4 +1,4 @@
-import { Box, Button } from '@mui/material';
+import { Box, Button, Stack } from '@mui/material';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Feed from './components/Feed';
@@ -7,9 +7,11 @@ function App() {
   return (
     <Box>
       <Navbar />
-      <Sidebar />
-      <Feed />
-      <Rightbar />
+      <Stack direction='row' gap={2}>
+        <Sidebar />
+        <Feed />
+        <Rightbar />
+      </Stack>
     </Box>
   );
 }

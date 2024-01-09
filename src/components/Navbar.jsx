@@ -50,7 +50,7 @@ function Navbar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static'>
         <AppBarContent>
-          <Typography component='h1' variant='h5'>
+          <Typography fontWeight={700} component='h1' variant='h5'>
             Fake Buck
           </Typography>
           <Stack direction='row' gap={1}>
@@ -76,7 +76,7 @@ function Navbar() {
             open={Boolean(anchorEl)}
             onClose={closeMenuList}
             anchorOrigin={{
-              vertical: 'top',
+              vertical: 'bottom',
               horizontal: 'left',
             }}
             transformOrigin={{
