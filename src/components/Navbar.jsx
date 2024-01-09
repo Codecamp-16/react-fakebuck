@@ -31,13 +31,13 @@ function Navbar() {
           <Typography component='h1' variant='h5'>
             Fake Buck
           </Typography>
-          <Stack direction='row' gap={1} sx={{ display: { md: 'none' } }}>
-            <IconButton>
+          <Stack direction='row' gap={1}>
+            <IconButton sx={{ display: { xs: 'none', md: 'block' } }}>
               <Badge badgeContent={4} color='error'>
                 <MailIcon />
               </Badge>
             </IconButton>
-            <IconButton>
+            <IconButton sx={{ display: { xs: 'none', md: 'block' } }}>
               <Badge badgeContent={2} color='error'>
                 <NotificationsIcon />
               </Badge>
